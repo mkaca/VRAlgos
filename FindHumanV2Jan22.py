@@ -46,16 +46,9 @@ while(1):
     area = np.sum(erosion.flatten()) / 255                ## Gets area of moving objects 
 
     if area > areaThreshold:
-    	"""# find contours
-    	imgray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    	ret,thresh = cv2.threshold(imgray,127,255,0)
-    	image, contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-    	if (len(contours) > 0):
-    		img = cv2.drawContours(frame, contours, -1, (0,255,0), 3)  
-    		cv2.imshow('contours',img)
-    		cv2.waitKey(0)"""																			 # contours is trash!!!!!!!
 
-    	# Initiate FAST object with default values
+
+    	# Initiate FAST object with default values                                 #### basically can use FAST or Harris for edge detection 
     	fast = cv2.FastFeatureDetector_create(threshold=25)
     	# find and draw the keypoints
     	kp = fast.detect(erosion, None)
