@@ -25,6 +25,7 @@ import copy
 areaThreshold = 2500
 
 cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture('videoplayback.mp4')
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(3,3))
 #fgbg = cv2.bgsegm.createBackgroundSubtractorGMG()
 fgbg = cv2.createBackgroundSubtractorMOG2()
